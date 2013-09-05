@@ -1,2 +1,8 @@
 .metadata
 RemoteSystemsTempFiles
+.project
+.classpath
+target
+*.iml
+*.ipr
+*.iws
