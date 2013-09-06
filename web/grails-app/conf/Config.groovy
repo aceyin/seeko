@@ -89,3 +89,23 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+/****** SEEKO CONFIGURATIONS ******/
+// seeko workspace folder
+seeko.workspace = "${userHome}/.seeko"
+// elastic-search config
+seeko.es.conf = [
+        // elastic-search workspace
+        workspace : "${seeko.workspace}/es",
+        // elastic-search conf dir
+        conf : "${seeko.workspace}/es/conf",
+        // elastic-search data dir
+        data : "${seeko.workspace}/es/data"
+]
+// seeko source repository dir
+seeko.repo.dir = "${seeko.workspace}/repo"
+// seeko embedded database data dir
+seeko.db.dir = "${seeko.workspace}/db"
+
+// exposed configuration file
+seeko.conf.exposed =  "${seeko.workspace}/seeko.conf"
