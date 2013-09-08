@@ -9,10 +9,17 @@ class SystemUtil {
 
     private static File WORKSPACE = new File(Holders.grailsApplication.config.seeko.workspace)
 
+    /**
+     * Check if workspace exists
+     * @return
+     */
     static boolean workspaceExists () {
         WORKSPACE.exists()
     }
 
+    /**
+     * Initialize the workspaces - creating the directories
+     */
     static void initWorkspace () {
         if(!workspaceExists()) {
             WORKSPACE.mkdir()
