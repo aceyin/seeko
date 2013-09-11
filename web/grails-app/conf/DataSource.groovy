@@ -26,7 +26,7 @@ environments {
     production {
         dataSource {
             dbCreate = "update"
-            url = "jdbc:h2:prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
+            url = "jdbc:h2:file:~/db/seeko.db;IFEXISTS=TRUE;USER=seeko;PASSWORD=seeko;MVCC=TRUE;LOCK_TIMEOUT=10000;MODE=MYSQL"
             pooled = true
             properties {
                maxActive = -1
