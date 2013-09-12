@@ -1,4 +1,5 @@
-import org.seeko.IndexController
+import org.seeko.controller.IndexController
+import org.seeko.controller.SettingsController
 
 class UrlMappings {
 
@@ -9,7 +10,10 @@ class UrlMappings {
 			}
 		}
 
-		"/"(controller: IndexController)
+		"/" {
+            controller = "IndexController"
+            action = "index"
+        }
 
 		"500"(view:'/error')
 	}

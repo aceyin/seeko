@@ -109,3 +109,8 @@ seeko.db.dir = "${seeko.workspace}/db"
 
 // exposed configuration file
 seeko.conf.exposed =  "${seeko.workspace}/seeko.conf"
+
+// the keys of system seetings
+seeko.settings.keys = [
+        admin.password = 'admin.password'
+]
