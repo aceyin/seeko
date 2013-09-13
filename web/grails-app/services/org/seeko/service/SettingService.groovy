@@ -7,6 +7,6 @@ class SettingService {
     def grailsApplication
 
     def getAdminPassword() {
-        Settings.findByKey(grailsApplication.config["seeko.settings.keys.admin.password"])
+        Settings.findWhere(["key":grailsApplication.config.seeko.settings.keys["admin.password"]])
     }
 }

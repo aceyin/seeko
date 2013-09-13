@@ -10,8 +10,8 @@
 // if (System.properties["${appName}.config.location"]) {
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
 // }
-
-grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
+grails.app.context = '/' // the web context of this application
+grails.project.groupId = 'org.seeko' // change this to alter the default package name and Maven publishing destination
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
 grails.mime.use.accept.header = false
 grails.mime.types = [
@@ -71,11 +71,9 @@ environments {
 
 // log4j configuration
 log4j = {
-    // Example of changing the log pattern for the default console appender:
-    //
-    //appenders {
-    //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
-    //}
+    appenders {
+        console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
+    }
 
     error  'org.codehaus.groovy.grails.web.servlet',        // controllers
            'org.codehaus.groovy.grails.web.pages',          // GSP
@@ -112,5 +110,5 @@ seeko.conf.exposed =  "${seeko.workspace}/seeko.conf"
 
 // the keys of system seetings
 seeko.settings.keys = [
-        admin.password = 'admin.password'
+        "admin.password" : "admin.password"
 ]

@@ -1,8 +1,8 @@
 dataSource {
     pooled = true
     driverClassName = "org.h2.Driver"
-    username = "sa"
-    password = ""
+    username = "seeko"
+    password = "seeko"
 }
 hibernate {
     cache.use_second_level_cache = true
@@ -14,7 +14,7 @@ environments {
     development {
         dataSource {
             dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
+            url = "jdbc:h2:file:~/.seeko/db/seeko;MVCC=TRUE;LOCK_TIMEOUT=10000;MODE=MYSQL"
         }
     }
     test {
@@ -26,7 +26,7 @@ environments {
     production {
         dataSource {
             dbCreate = "update"
-            url = "jdbc:h2:file:~/db/seeko.db;IFEXISTS=TRUE;USER=seeko;PASSWORD=seeko;MVCC=TRUE;LOCK_TIMEOUT=10000;MODE=MYSQL"
+            url = "jdbc:h2:file:~/.seeko/db/seeko;MVCC=TRUE;LOCK_TIMEOUT=10000;MODE=MYSQL"
             pooled = true
             properties {
                maxActive = -1

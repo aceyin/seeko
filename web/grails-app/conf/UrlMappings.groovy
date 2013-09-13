@@ -10,10 +10,7 @@ class UrlMappings {
 			}
 		}
 
-		"/" {
-            controller = "IndexController"
-            action = "index"
-        }
+		"/" (controller :"index",action : "index")
 
 		"500"(view:'/error')
 	}
