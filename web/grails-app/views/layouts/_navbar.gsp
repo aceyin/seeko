@@ -15,9 +15,9 @@
                 </form>
             </div>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/settings" class="nav-menu">Settings</a></li>
-                <li><a href="/status" class="nav-menu">Status</a></li>
-                <li><a href="/statistics" class="nav-menu">Statistics</a></li>
+                <li><a href="/settings" class="nav-menu"><g:message code="seeko.menus.settings"/></a></li>
+                <li><a href="/status" class="nav-menu"><g:message code="seeko.menus.status"/> </a></li>
+                <li><a href="/statistics" class="nav-menu"><g:message code="seeko.menu.statistics"/> </a></li>
             </ul>
         </div><!-- navbar-collapse -->
     </div>

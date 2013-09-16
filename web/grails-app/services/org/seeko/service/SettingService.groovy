@@ -4,10 +4,17 @@ import org.codehaus.groovy.grails.plugins.codecs.MD5Codec
 import org.seeko.domain.Settings
 import sun.security.provider.MD5
 
+import javax.annotation.PostConstruct
+
 class SettingService {
 
     def grailsApplication
-    private String passwordKey = grailsApplication.config.seeko.settings.keys["admin.password"]
+    def passwordKey
+
+    @PostConstruct
+    init() {
+        passwordKey = grailsApplication.config.seeko.settings.keys["admin.password"]
+    }
 
     /**
      * Get the password of administrator account.
