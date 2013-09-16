@@ -15,6 +15,7 @@
         <module>es</module>
         <module>indexer</module>
         <module>cli</module>
+        <module>scm</module>
     </modules>
 
     <!-- properties definition -->
@@ -29,6 +30,13 @@
                 <groupId>net.sourceforge.winstone</groupId>
                 <artifactId>winstone</artifactId>
                 <version>0.9.10</version>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.11</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

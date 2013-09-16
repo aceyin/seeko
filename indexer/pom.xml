@@ -2,14 +2,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <artifactId>indexer</artifactId>
+    <packaging>jar</packaging>
+
     <parent>
-        <artifactId>seeko</artifactId>
         <groupId>org.seeko</groupId>
+        <artifactId>seeko</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>indexer</artifactId>
+    <description>
+        This module is responsible for reading source codes from local source code repository and put them into elastic-search.
+        Except simple put the source code content into elastic-search, it will use the grammar-parse plugin to parse the source codes.
+        This module will be depended by scm module.
+    </description>
 
 
 </project>
