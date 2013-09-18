@@ -8,7 +8,7 @@ class HomeController {
 
     def index() {
         if (!userService.hasAdminAccount()) {
-            redirect([controller: "user",action: "create"])
+            redirect([controller: "user",action: "create",params: ['admin':'true']])
         }else{
             render(view: "/home/index")
         }

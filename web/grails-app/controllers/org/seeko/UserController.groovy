@@ -1,5 +1,9 @@
 package org.seeko
 
 class UserController {
-    static scaffold = true
+    def scaffold = true
+
+    def create() {
+
+    }
 }
