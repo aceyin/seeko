@@ -1,9 +1,5 @@
 /* main css based on bootstrap*/
 /* required when use fixed navbar */
-body {
-    padding-top: 70px;
-}
-
 .nav-menu {
     color:rgba(65, 163, 23, 0.8);
     font-size: 14px;font-weight: bold;

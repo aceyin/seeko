@@ -2,11 +2,14 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'type', 'error')} required">
-	<label for="type">
-		<g:message code="user.type.label" default="Type" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select name="type" from="${org.seeko.User$UserType?.values()}" keys="${org.seeko.User$UserType.values()*.name()}" required="" value="${userInstance?.type?.name()}"/>
+<div>
+<ul class="list-unstyled">
+    <li><g:message code="seeko.labels.email"/> <g:message code="seeko.lables.required.field"/> </li>
+    <li><input type="email" name="email" id="email" size="30" class="form-control navbar-form input-lg" placeholder="abc@email.com"/> </li>
+    <li><g:message code="seeko.labels.password"/> <g:message code="seeko.lables.required.field"/> </li>
+    <li><input type="password" name="password" class="form-control navbar-form input-lg" id="password" size="30"/></li>
+    <li><g:message code="seeko.labels.confirm.password"/> <g:message code="seeko.lables.required.field"/> </li>
+    <li><input type="password" name="confirm-password" class="form-control navbar-form input-lg" id="confirm-password" size="30"/></li>
+</ul>
 </div>
 

@@ -1,23 +1,16 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">Seeko</a>
+            <ul class="list-inline">
+                <li><a class="navbar-brand" href="/"><img src="/images/seeko.png" border="0" title="Seeko"/></a></li>
+                <li><input type="text" size="30"/> </li>
+            </ul>
         </div><!-- navbar-header -->
-        <div class="navbar-collapse collapse">
-            <div class="col-lg-3">
-                <form>
-                    <div class="input-group">
-                        <input type="text" class="form-control">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">Seek</button>
-                        </span>
-                    </div><!-- /input-group -->
-                </form>
-            </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/settings" class="nav-menu"><g:message code="seeko.menus.settings"/></a></li>
-                <li><a href="/status" class="nav-menu"><g:message code="seeko.menus.status"/> </a></li>
-                <li><a href="/statistics" class="nav-menu"><g:message code="seeko.menu.statistics"/> </a></li>
+                <li><a href="/status" class="nav-menu"><g:message code="seeko.menus.status"/></a></li>
+                <li><a href="/statistics" class="nav-menu"><g:message code="seeko.menu.statistics"/></a></li>
             </ul>
         </div><!-- navbar-collapse -->
     </div>
