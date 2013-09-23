@@ -13,15 +13,15 @@ class SystemUtil {
      * Check if workspace exists
      * @return
      */
-    static boolean workspaceExists () {
+    static boolean workspaceExists() {
         WORKSPACE.exists()
     }
 
     /**
      * Initialize the workspaces - creating the directories
      */
-    static void initWorkspace () {
-        if(!workspaceExists()) {
+    static void initWorkspace() {
+        if (!workspaceExists()) {
             WORKSPACE.mkdir()
             initEsWorkspace()
             initRepoWorkspace()

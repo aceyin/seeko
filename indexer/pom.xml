@@ -13,8 +13,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <description>
-        This module is responsible for reading source codes from local source code repository and put them into elastic-search.
-        Except simple put the source code content into elastic-search, it will use the grammar-parse plugin to parse the source codes.
+        This module is responsible for reading source codes from local source code repository and put them into
+        elastic-search.
+        Except simple put the source code content into elastic-search, it will use the grammar-parse plugin to parse the
+        source codes.
         This module will be depended by scm module.
     </description>
 

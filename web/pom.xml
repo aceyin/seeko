@@ -44,7 +44,6 @@
             <scope>test</scope>
         </dependency>
 
-        
 
         <dependency>
             <groupId>org.grails.plugins</groupId>
@@ -104,7 +103,7 @@
     </dependencies>
 
     <build>
-        <pluginManagement />
+        <pluginManagement/>
 
         <plugins>
             <!-- Disables the Maven surefire plugin for Grails applications, as we have our own test runner -->

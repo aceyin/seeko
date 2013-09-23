@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>scm</artifactId>
-  <packaging>jar</packaging>
+    <artifactId>scm</artifactId>
+    <packaging>jar</packaging>
 
     <parent>
         <groupId>org.seeko</groupId>
@@ -12,28 +12,29 @@
         <relativePath>/</relativePath>
     </parent>
 
-  <name>scm</name>
-  <url>http://maven.apache.org</url>
-   <description>
-       This module is for processing the source codes management.
-       Including checkout the sources from remote repository, update the source codes regularly.
-       There are some schedulers running when application startup, these schedulers will update the source codes from remote repository regularly.
-       When source code change detected, this module will call indexer module to update the index in elastic-search.
-   </description>
+    <name>scm</name>
+    <url>http://maven.apache.org</url>
+    <description>
+        This module is for processing the source codes management.
+        Including checkout the sources from remote repository, update the source codes regularly.
+        There are some schedulers running when application startup, these schedulers will update the source codes from
+        remote repository regularly.
+        When source code change detected, this module will call indexer module to update the index in elastic-search.
+    </description>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
-  <dependencies>
-      <dependency>
-          <groupId>org.seeko</groupId>
-          <artifactId>indexer</artifactId>
-          <version>${project.version}</version>
-      </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-    </dependency>
-  </dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>org.seeko</groupId>
+            <artifactId>indexer</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+    </dependencies>
 </project>

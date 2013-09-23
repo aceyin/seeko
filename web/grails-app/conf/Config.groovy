@@ -15,18 +15,18 @@ grails.project.groupId = 'org.seeko' // change this to alter the default package
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
 grails.mime.use.accept.header = false
 grails.mime.types = [
-    all:           '*/*',
-    atom:          'application/atom+xml',
-    css:           'text/css',
-    csv:           'text/csv',
-    form:          'application/x-www-form-urlencoded',
-    html:          ['text/html','application/xhtml+xml'],
-    js:            'text/javascript',
-    json:          ['application/json', 'text/json'],
-    multipartForm: 'multipart/form-data',
-    rss:           'application/rss+xml',
-    text:          'text/plain',
-    xml:           ['text/xml', 'application/xml']
+        all: '*/*',
+        atom: 'application/atom+xml',
+        css: 'text/css',
+        csv: 'text/csv',
+        form: 'application/x-www-form-urlencoded',
+        html: ['text/html', 'application/xhtml+xml'],
+        js: 'text/javascript',
+        json: ['application/json', 'text/json'],
+        multipartForm: 'multipart/form-data',
+        rss: 'application/rss+xml',
+        text: 'text/plain',
+        xml: ['text/xml', 'application/xml']
 ]
 
 // URL Mapping Cache Max Size, defaults to 5000
@@ -51,7 +51,7 @@ grails.enable.native2ascii = true
 // packages to include in Spring bean scanning
 grails.spring.bean.packages = []
 // whether to disable processing of multi part requests
-grails.web.disable.multipart=false
+grails.web.disable.multipart = false
 
 // request parameters to mask when logging exceptions
 grails.exceptionresolver.params.exclude = ['password']
@@ -72,20 +72,20 @@ environments {
 // log4j configuration
 log4j = {
     appenders {
-        console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
+        console name: 'stdout', layout: pattern(conversionPattern: '%c{2} %m%n')
     }
 
-    error  'org.codehaus.groovy.grails.web.servlet',        // controllers
-           'org.codehaus.groovy.grails.web.pages',          // GSP
-           'org.codehaus.groovy.grails.web.sitemesh',       // layouts
-           'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
-           'org.codehaus.groovy.grails.web.mapping',        // URL mapping
-           'org.codehaus.groovy.grails.commons',            // core / classloading
-           'org.codehaus.groovy.grails.plugins',            // plugins
-           'org.codehaus.groovy.grails.orm.hibernate',      // hibernate integration
-           'org.springframework',
-           'org.hibernate',
-           'net.sf.ehcache.hibernate'
+    error 'org.codehaus.groovy.grails.web.servlet',        // controllers
+            'org.codehaus.groovy.grails.web.pages',          // GSP
+            'org.codehaus.groovy.grails.web.sitemesh',       // layouts
+            'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
+            'org.codehaus.groovy.grails.web.mapping',        // URL mapping
+            'org.codehaus.groovy.grails.commons',            // core / classloading
+            'org.codehaus.groovy.grails.plugins',            // plugins
+            'org.codehaus.groovy.grails.orm.hibernate',      // hibernate integration
+            'org.springframework',
+            'org.hibernate',
+            'net.sf.ehcache.hibernate'
 }
 
 /****** SEEKO CONFIGURATIONS ******/
@@ -94,11 +94,11 @@ seeko.workspace = "${userHome}/.seeko"
 // elastic-search config
 seeko.es.conf = [
         // elastic-search workspace
-        workspace : "${seeko.workspace}/es",
+        workspace: "${seeko.workspace}/es",
         // elastic-search conf dir
-        conf : "${seeko.workspace}/es/conf",
+        conf: "${seeko.workspace}/es/conf",
         // elastic-search data dir
-        data : "${seeko.workspace}/es/data"
+        data: "${seeko.workspace}/es/data"
 ]
 // seeko source repository dir
 seeko.repo.dir = "${seeko.workspace}/repo"
@@ -106,9 +106,9 @@ seeko.repo.dir = "${seeko.workspace}/repo"
 seeko.db.dir = "${seeko.workspace}/db"
 
 // exposed configuration file
-seeko.conf.exposed =  "${seeko.workspace}/seeko.conf"
+seeko.conf.exposed = "${seeko.workspace}/seeko.conf"
 
 // the keys of system seetings
 seeko.settings.keys = [
-        "admin.password" : "admin.password"
+        "admin.password": "admin.password"
 ]

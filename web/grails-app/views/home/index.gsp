@@ -2,8 +2,9 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-  <title>Seeko</title>
+    <title>Seeko</title>
 </head>
+
 <body>
 Seeko / Index
 </body>
