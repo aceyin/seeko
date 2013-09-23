@@ -1,25 +1,23 @@
 <nav class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="container">
         <div class="row">
-            <div class="cls-xs-12 col-lg-7">
+            <div class="col-lg-7">
                 <div class="row">
-                    <div class="col-xs-2 col-lg-2">
+                    <div class="col-lg-2">
                         <a class="navbar-brand" href="${createLink([controller: 'home', action: 'index'])}">
-                            <img src="/images/seeko.png" border="0" title="Seeko"/></a>
+                            <img src="/images/seeko.png" border="0" title="Seeko"/>
+                        </a>
                     </div>
 
-                    <div class="col-xs-10 col-lg-5">
-                        <div class="row nav-q">
-                            <g:form action="${createLink(controller: 'search', action: 'index')}" method="POST">
-                                <div class="input-group">
-                                    <g:textField name="q" class="form-control input-group-lg"
-                                                 placeholder="input something here"/>
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button">Go!</button>
-                                    </span>
-                                </div>
-                            </g:form>
-                        </div>
+                    <div class="col-lg-10 nav-q">
+                        <g:form action="${createLink(controller: 'search', action: 'index')}" method="POST">
+                            <div class="input-group">
+                                <g:textField name="q" class="form-control" placeholder="input something here"/>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">Go!</button>
+                                </span>
+                            </div>
+                        </g:form>
                     </div>
                 </div>
             </div><!-- navbar-header -->
@@ -27,7 +25,7 @@
                 <div class="row nav-menu">
                     <ul class="nav navbar-nav navbar-right" id="nav-items">
                         <li>
-                            <a href="${createLink(controller: 'settings', action: 'index')}">
+                            <a href="${createLink(controller: 'settings')}">
                                 <g:message code="seeko.menus.settings"/>
                             </a>
                         </li>

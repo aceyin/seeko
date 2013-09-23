@@ -2,6 +2,7 @@ package org.seeko
 
 import org.seeko.service.UserService
 
+@Mixin(ControllerSupport)
 class HomeController {
 
     UserService userService

@@ -4,6 +4,7 @@ import org.seeko.command.AdminCreationCommand
 import org.seeko.command.LoginCommand
 import org.seeko.service.UserService
 
+@Mixin(ControllerSupport)
 class AdminController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
@@ -16,18 +17,6 @@ class AdminController {
         } else {
             redirect([action: "login"])
         }
-    }
-
-    /**
-     * Check if current user is logged in.
-     * @return
-     */
-    private boolean isLoggedIn() {
-        def admin = session.getAttribute(Constants.ADMIN_SESSION_KEY)
-        if (admin) {
-            return true
-        }
-        return false
     }
 
     /**

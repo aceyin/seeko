@@ -1,6 +1,6 @@
 /* main css based on bootstrap*/
-body {
-    /*background: transparent url("../images/bg.png") repeat;*/
+.slogan {
+    padding-top: 30%;
 }
 
 /* required when use fixed navbar */
@@ -13,4 +13,8 @@ body {
 
 .nav-q {
     margin: 20px 0 0 0;
+}
+
+.nav-q-input {
+    width: 400px;
 }
