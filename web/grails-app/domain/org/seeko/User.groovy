@@ -2,13 +2,13 @@ package org.seeko
 
 class User {
 
-    static enum UserType {
-        ADMIN,NORMAL
+    static enum Type {
+        admin, normal
     }
 
     String email
     String password
-    UserType type
+    Type type
 
     static constraints = {
         email(email:true)

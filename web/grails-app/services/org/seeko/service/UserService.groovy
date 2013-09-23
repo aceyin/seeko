@@ -13,6 +13,6 @@ class UserService {
     }
 
     def getAdminAccount() {
-        User.find {type == User.UserType.ADMIN}
+        User.find {type == User.Type.admin}
     }
 }
