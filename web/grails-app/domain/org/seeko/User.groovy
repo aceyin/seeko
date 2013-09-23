@@ -11,7 +11,7 @@ class User {
     Type type
 
     static constraints = {
-        email(email:true)
-        password(blank:false)
+        email(email: true)
+        password(blank: false)
     }
 }

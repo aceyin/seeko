@@ -3,7 +3,7 @@
         <div class="navbar-header">
             <ul class="list-inline">
                 <li><a class="navbar-brand" href="/"><img src="/images/seeko.png" border="0" title="Seeko"/></a></li>
-                <li><input type="text" size="30"/> </li>
+                <li><input type="text" size="30"/></li>
             </ul>
         </div><!-- navbar-header -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
