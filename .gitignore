@@ -8,3 +8,4 @@ target
 *.iws
 web/plugins/*
 out/*
+seeko.ids
