@@ -1,6 +1,6 @@
 /* main css based on bootstrap*/
 body {
-    background: transparent url("../images/bg.png") repeat;
+    /*background: transparent url("../images/bg.png") repeat;*/
 }
 
 /* required when use fixed navbar */
@@ -12,5 +12,5 @@ body {
 }
 
 .nav-q {
-    margin: 35px 0 0 0;
+    margin: 20px 0 0 0;
 }

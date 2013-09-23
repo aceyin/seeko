@@ -1,23 +1,31 @@
 <nav class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
+            <div class="cls-xs-12 col-lg-7">
                 <div class="row">
-                    <div class="col-md-2">
+                    <div class="col-xs-2 col-lg-2">
                         <a class="navbar-brand" href="${createLink([controller: 'home', action: 'index'])}">
                             <img src="/images/seeko.png" border="0" title="Seeko"/></a>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-xs-10 col-lg-5">
                         <div class="row nav-q">
-                            <g:textField name="q" size="30" class="form-control input-group-lg"/>
+                            <g:form action="${createLink(controller: 'search', action: 'index')}" method="POST">
+                                <div class="input-group">
+                                    <g:textField name="q" class="form-control input-group-lg"
+                                                 placeholder="input something here"/>
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">Go!</button>
+                                    </span>
+                                </div>
+                            </g:form>
                         </div>
                     </div>
                 </div>
             </div><!-- navbar-header -->
-            <div class="col-md-4">
+            <div class="col-lg-5">
                 <div class="row nav-menu">
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right" id="nav-items">
                         <li>
                             <a href="${createLink(controller: 'settings', action: 'index')}">
                                 <g:message code="seeko.menus.settings"/>
@@ -31,6 +39,11 @@
                         <li>
                             <a href="${createLink(controller: 'statistics', action: 'index')}">
                                 <g:message code="seeko.menu.statistics"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="${createLink(controller: 'help', action: 'index')}">
+                                <g:message code="seeko.menu.help"/>
                             </a>
                         </li>
                         <g:if test="${session.ADMIN_SESSION != null}">
