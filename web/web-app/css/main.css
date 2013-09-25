@@ -1,4 +1,9 @@
 /* main css based on bootstrap*/
+body {
+    background: transparent url("../images/slogan.png") no-repeat fixed center;
+    padding-top: 100px;
+}
+
 .slogan {
     padding-top: 30%;
 }

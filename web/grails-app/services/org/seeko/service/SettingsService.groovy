@@ -13,7 +13,7 @@ class SettingsService {
      */
     def SettingsCommand loadDefaultSettings() {
         SettingsCommand cmd = new SettingsCommand()
-        Map<String, String> defaultCfg = grailsApplication.config['seeko.general.settings.default']
+        Map<String, String> defaultCfg = grailsApplication.config.seeko.general.settings.default
         if (!defaultCfg) {
             throw new RuntimeException("Can not load default configuration data.")
         }
@@ -25,8 +25,7 @@ class SettingsService {
      * Initialize the settings, save the default settings to file.
      */
     def initializeSettings() {
-        String cfg = grailsApplication.config['seeko.conf.exposed']
-        File file = new File(cfg)
+        File file = new File(grailsApplication.config.seeko.conf.exposed)
         if (!file.exists()) {
             SettingsCommand settings = loadDefaultSettings()
             saveSettings(settings)
@@ -39,9 +38,8 @@ class SettingsService {
      */
     def SettingsCommand loadSettings() {
         SettingsCommand cmd = new SettingsCommand()
-        String cfg = grailsApplication.config['seeko.conf.exposed']
         Properties p = new Properties()
-        p.load(new FileInputStream(cfg))
+        p.load(new FileInputStream(grailsApplication.config.seeko.conf.exposed))
 
         BeanUtils.populate(cmd, p)
         return cmd
@@ -51,10 +49,9 @@ class SettingsService {
      * Save settings.
      */
     def saveSettings(SettingsCommand cmd) {
-        String cfg = grailsApplication.config['seeko.conf.exposed']
         Map<String, String> map = BeanUtils.describe(cmd)
         Properties p = new Properties()
         p.putAll(map)
-        p.store(new FileOutputStream(cfg), "Updated at " + new Date())
+        p.store(new FileOutputStream(grailsApplication.config.seeko.conf.exposed), "Updated at " + new Date())
     }
 }

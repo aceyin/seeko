@@ -7,26 +7,21 @@ import org.seeko.service.SettingsService
  */
 class SystemUtil {
 
-    private static File WORKSPACE = new File(Holders.grailsApplication.config.seeko.workspace)
-
-    /**
-     * Check if workspace exists
-     * @return
-     */
-    static boolean workspaceExists() {
-        WORKSPACE.exists()
-    }
-
     /**
      * Initialize the workspaces - creating the directories
      */
     static void initSystem() {
-        if (!workspaceExists()) {
-            WORKSPACE.mkdir()
-            initEsWorkspace()
-            initRepoWorkspace()
-            initDatabaseWorkspace()
-            initDefaultSettings()
+        initWorkspace()
+        initEsWorkspace()
+        initRepoWorkspace()
+        initDatabaseWorkspace()
+        initDefaultSettings()
+    }
+
+    private static void initWorkspace() {
+        File dir = new File(Holders.grailsApplication.config.seeko.workspace)
+        if (!dir.exists()) {
+            dir.mkdir()
         }
     }
 
@@ -36,16 +31,37 @@ class SystemUtil {
     }
 
     private static boolean initDatabaseWorkspace() {
-        new File(Holders.grailsApplication.config.seeko.db.dir).mkdir()
+        File file = new File(Holders.grailsApplication.config.seeko.db.dir)
+        if (!file.exists()) {
+            file.mkdir()
+        }
     }
 
     private static boolean initRepoWorkspace() {
-        new File(Holders.grailsApplication.config.seeko.repo.dir).mkdir()
+        File file = new File(Holders.grailsApplication.config.seeko.repo.dir)
+        if (!file.exists()) {
+            file.mkdir()
+        }
     }
 
     private static void initEsWorkspace() {
-        Holders.grailsApplication.config.seeko.es.conf.each { k, v ->
-            new File(v).mkdir()
+        // create home directory for es
+        String esdir = Holders.grailsApplication.config.seeko.es.dir
+        println "Creating es workspace :" + esdir
+        File esHome = new File(esdir)
+
+        if (!esHome.exists()) {
+            esHome.mkdir()
+        }
+        // create conf directory for es
+        File esConf = new File(Holders.grailsApplication.config.seeko.es.conf.dir)
+        if (!esConf.exists()) {
+            esConf.mkdir()
+        }
+        // create data directory for es
+        File esData = new File(Holders.grailsApplication.config.seeko.es.data.dir)
+        if (!esData.exists()) {
+            esData.mkdir()
         }
     }
 

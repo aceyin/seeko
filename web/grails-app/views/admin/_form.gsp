@@ -3,7 +3,7 @@
 
 
 <div class="row">
-    <div class="col-lg-5">
+    <div class="col-lg-12">
         <ul class="list-unstyled">
             <li><g:message code="seeko.labels.email"/> <g:message code="seeko.lables.required.field"/></li>
             <li><g:textField name="email" size="30" class="form-control input-lg" placeholder="abc@email.com"

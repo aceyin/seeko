@@ -1,4 +1,3 @@
-<%@ page import="org.seeko.Settings" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +18,8 @@
                     </div>
 
                     <div class="panel-body">
-                        <g:textField name="HTTP_PORT" class="form-control input-group-lg" placeholder="8080"/>
+                        <g:textField name="HTTP_PORT" class="form-control input-group-lg"
+                                     value="${settings.HTTP_PORT}"/>
                         <span class="help-block"><g:message code="seeko.lables.settings.http.port.desc"/></span>
                     </div>
                 </div><!-- http port -->

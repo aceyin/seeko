@@ -11,9 +11,6 @@
         <div class="row">
             <div class="col-lg-3"></div>
 
-            <div class="col-lg-6">
-                <img src="/images/slogan.png" border="0" class="slogan"/>
-            </div>
 
             <div class="col-lg-3"></div>
         </div>

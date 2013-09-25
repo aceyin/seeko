@@ -12,4 +12,5 @@ class SettingsCommand {
     String ES_MEMORY
     String FILE_TYPE_FILTERS
     String DIRECTORY_FILTERS
+
 }
