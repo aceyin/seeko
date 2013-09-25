@@ -108,7 +108,12 @@ seeko.db.dir = "${seeko.workspace}/db"
 // exposed configuration file
 seeko.conf.exposed = "${seeko.workspace}/seeko.conf"
 
-// the keys of system seetings
-seeko.settings.keys = [
-        "admin.password": "admin.password"
+// the default general settings
+seeko.general.settings.default = [
+        "HTTP_PORT": "8080",
+        "SEACHER_MEMORY": "1024m",
+        "INDEXER_MEMORY": "1024m",
+        "ES_MEMORY": "2048m",
+        "FILE_TYPE_FILTERS": ".exe, .zip, .gz, .tar, .jar, .7z, .bin, .war, .ear",
+        "DIRECTORY_FILTERS": "tags,releases"
 ]

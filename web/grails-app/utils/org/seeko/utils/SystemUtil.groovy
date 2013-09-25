@@ -25,11 +25,16 @@ class SystemUtil {
             WORKSPACE.mkdir()
             initEsWorkspace()
             initRepoWorkspace()
-            initDbWorkspace()
+            initDatabaseWorkspace()
+            initDefaultSettings()
         }
     }
 
-    private static boolean initDbWorkspace() {
+    private static void initDefaultSettings() {
+
+    }
+
+    private static boolean initDatabaseWorkspace() {
         new File(Holders.grailsApplication.config.seeko.db.dir).mkdir()
     }
 

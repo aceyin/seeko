@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta name="layout" content="main">
-    <title><g:message code="default.create.label" args="[entityName]"/></title>
+    <title><g:message code="seeko.lables.title.general.settings"/></title>
 </head>
 
 <body>
@@ -19,61 +19,72 @@
                     </div>
 
                     <div class="panel-body">
-                        <g:textField name="httpPort" class="form-control input-group-lg" placeholder="8080"/>
+                        <g:textField name="HTTP_PORT" class="form-control input-group-lg" placeholder="8080"/>
                         <span class="help-block"><g:message code="seeko.lables.settings.http.port.desc"/></span>
                     </div>
                 </div><!-- http port -->
 
-            <!-- memory -->
+            <!-- memory-searcher -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title"><g:message code="seeko.lables.settings.title.memory"/></h3>
+                        <h3 class="panel-title"><g:message code="seeko.lables.settings.title.memory.searcher"/></h3>
                     </div>
 
                     <div class="panel-body">
-                        <g:textField name="memory" class="form-control input-group-lg" placeholder="2048"/>
-                        <span class="help-block"><g:message code="seeko.lables.settings.memory.desc"/></span>
+                        <g:textField name="SEACHER_MEMORY" class="form-control input-group-lg" placeholder="1024m"/>
+                        <span class="help-block"><g:message code="seeko.lables.settings.memory.searcher.desc"/></span>
                     </div>
-                </div><!-- memory -->
+                </div><!-- memory-searcher -->
 
-            <!-- workspace -->
+            <!-- memory-indexer -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title"><g:message code="seeko.lables.settings.title.workspace"/></h3>
+                        <h3 class="panel-title"><g:message code="seeko.lables.settings.title.memory.indexer"/></h3>
                     </div>
 
                     <div class="panel-body">
-                        <g:textField name="workspace" class="form-control input-group-lg" placeholder="~/.seeko"/>
-                        <span class="help-block"><g:message code="seeko.lables.settings.workspace.desc"/></span>
+                        <g:textField name="INDEXER_MEMORY" class="form-control input-group-lg" placeholder="1024m"/>
+                        <span class="help-block"><g:message code="seeko.lables.settings.memory.indexer.desc"/></span>
                     </div>
-                </div><!-- workspace -->
+                </div><!-- memory-indexer -->
 
-
-            <!-- filters -->
+            <!-- memory-elastic-search -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title"><g:message code="seeko.lables.settings.title.filters"/></h3>
+                        <h3 class="panel-title"><g:message code="seeko.lables.settings.title.memory.es"/></h3>
                     </div>
 
                     <div class="panel-body">
-                        <g:textField name="filters" class="form-control input-group-lg"
+                        <g:textField name="ES_MEMORY" class="form-control input-group-lg" placeholder="2048m"/>
+                        <span class="help-block"><g:message code="seeko.lables.settings.memory.es.desc"/></span>
+                    </div>
+                </div><!-- memory-elastic-search -->
+
+            <!-- file type filters -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><g:message code="seeko.lables.settings.title.file.filters"/></h3>
+                    </div>
+
+                    <div class="panel-body">
+                        <g:textField name="FILE_TYPE_FILTERS" class="form-control input-group-lg"
                                      placeholder=".exe, .zip, .gz, .tar, .jar, .7z, .bin, .war, .ear"/>
-                        <span class="help-block"><g:message code="seeko.lables.settings.filters.desc"/></span>
+                        <span class="help-block"><g:message code="seeko.lables.settings.file.filters.desc"/></span>
                     </div>
-                </div><!-- filters -->
+                </div><!-- file type filters -->
 
-            <!-- scm checkout options -->
+            <!-- directory filters -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title"><g:message code="seeko.lables.settings.title.scm.skip.folders"/></h3>
+                        <h3 class="panel-title"><g:message code="seeko.lables.settings.title.directory.filters"/></h3>
                     </div>
 
                     <div class="panel-body">
-                        <g:textField name="folderToIgnore" class="form-control input-group-lg"
+                        <g:textField name="DIRECTORY_FILTERS" class="form-control input-group-lg"
                                      placeholder="tags, releases"/>
-                        <span class="help-block"><g:message code="seeko.lables.settings.scm.skip.folders.desc"/></span>
+                        <span class="help-block"><g:message code="seeko.lables.settings.directory.filters.desc"/></span>
                     </div>
-                </div><!-- scm checkout options -->
+                </div><!-- directory filters -->
 
                 <div class="row pull-right">
                     <g:submitButton name="save" class="btn btn-success"
@@ -84,7 +95,6 @@
             </div>
         </g:form>
     </div><!-- general settings -->
-
 <!-- nav-pills -->
 <g:render template="nav-pills"/>
 </div>
