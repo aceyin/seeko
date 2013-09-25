@@ -3,7 +3,7 @@ import org.seeko.utils.SystemUtil
 class BootStrap {
 
     def init = { servletContext ->
-        SystemUtil.initWorkspace()
+        SystemUtil.initSystem()
     }
     def destroy = {
     }

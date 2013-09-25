@@ -1,7 +1,7 @@
 package org.seeko.utils
 
 import grails.util.Holders
-
+import org.seeko.service.SettingsService
 /**
  * Created by aceyin on 13-9-7.
  */
@@ -20,7 +20,7 @@ class SystemUtil {
     /**
      * Initialize the workspaces - creating the directories
      */
-    static void initWorkspace() {
+    static void initSystem() {
         if (!workspaceExists()) {
             WORKSPACE.mkdir()
             initEsWorkspace()
@@ -31,7 +31,8 @@ class SystemUtil {
     }
 
     private static void initDefaultSettings() {
-
+        SettingsService settingsService = Holders.applicationContext.getBean(SettingsService.class)
+        settingsService.initializeSettings()
     }
 
     private static boolean initDatabaseWorkspace() {
