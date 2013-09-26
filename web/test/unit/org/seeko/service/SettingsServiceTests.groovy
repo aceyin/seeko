@@ -7,7 +7,6 @@ import grails.test.mixin.TestFor
 @TestFor(SettingsService)
 class SettingsServiceTests {
 
-    void testSomething() {
-        fail "Implement me"
+    void testDataBinding() {
     }
 }

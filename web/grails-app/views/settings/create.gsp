@@ -1,3 +1,4 @@
+<%@ page import="org.seeko.command.SettingsCommand" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +32,8 @@
                     </div>
 
                     <div class="panel-body">
-                        <g:textField name="SEACHER_MEMORY" class="form-control input-group-lg" placeholder="1024m"/>
+                        <g:textField name="SEACHER_MEMORY" class="form-control input-group-lg"
+                                     value="${settings.SEACHER_MEMORY}"/>
                         <span class="help-block"><g:message code="seeko.lables.settings.memory.searcher.desc"/></span>
                     </div>
                 </div><!-- memory-searcher -->
@@ -43,7 +45,8 @@
                     </div>
 
                     <div class="panel-body">
-                        <g:textField name="INDEXER_MEMORY" class="form-control input-group-lg" placeholder="1024m"/>
+                        <g:textField name="INDEXER_MEMORY" class="form-control input-group-lg"
+                                     value="${settings.INDEXER_MEMORY}"/>
                         <span class="help-block"><g:message code="seeko.lables.settings.memory.indexer.desc"/></span>
                     </div>
                 </div><!-- memory-indexer -->
@@ -55,7 +58,8 @@
                     </div>
 
                     <div class="panel-body">
-                        <g:textField name="ES_MEMORY" class="form-control input-group-lg" placeholder="2048m"/>
+                        <g:textField name="ES_MEMORY" class="form-control input-group-lg"
+                                     value="${settings.ES_MEMORY}"/>
                         <span class="help-block"><g:message code="seeko.lables.settings.memory.es.desc"/></span>
                     </div>
                 </div><!-- memory-elastic-search -->
@@ -68,7 +72,7 @@
 
                     <div class="panel-body">
                         <g:textField name="FILE_TYPE_FILTERS" class="form-control input-group-lg"
-                                     placeholder=".exe, .zip, .gz, .tar, .jar, .7z, .bin, .war, .ear"/>
+                                     value="${settings.FILE_TYPE_FILTERS}"/>
                         <span class="help-block"><g:message code="seeko.lables.settings.file.filters.desc"/></span>
                     </div>
                 </div><!-- file type filters -->
@@ -81,7 +85,7 @@
 
                     <div class="panel-body">
                         <g:textField name="DIRECTORY_FILTERS" class="form-control input-group-lg"
-                                     placeholder="tags, releases"/>
+                                     value="${settings.DIRECTORY_FILTERS}"/>
                         <span class="help-block"><g:message code="seeko.lables.settings.directory.filters.desc"/></span>
                     </div>
                 </div><!-- directory filters -->

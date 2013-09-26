@@ -114,6 +114,6 @@ seeko.general.settings.default = [
         "SEACHER_MEMORY": "1024m",
         "INDEXER_MEMORY": "1024m",
         "ES_MEMORY": "2048m",
-        "FILE_TYPE_FILTERS": ".exe, .zip, .gz, .tar, .jar, .7z, .bin, .war, .ear",
-        "DIRECTORY_FILTERS": "tags,releases"
+        "FILE_TYPE_FILTERS": 'exe;zip;gz;tar;jar;7z;bin;war;ear',
+        "DIRECTORY_FILTERS": 'tags;releases'
 ]

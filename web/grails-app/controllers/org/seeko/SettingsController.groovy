@@ -15,16 +15,12 @@ class SettingsController {
      * @return
      */
     def index() {
-        if (!isLoggedIn()) {
-            redirect(controller: 'admin', action: 'login')
-            return
-        }
-        SettingsCommand settings = settingsService.loadSettings()
-        if (!settings) {
-            settings = settingsService.loadDefaultSettings()
+        SettingsCommand cmd = settingsService.loadSettings()
+        if (!cmd) {
+            cmd = settingsService.loadDefaultSettings()
         }
 
-        render(view: 'create', model: ['settings', settings])
+        render(view: 'create', model: ['settings': cmd])
     }
 
     /**
@@ -32,5 +28,7 @@ class SettingsController {
      * @return
      */
     def save(SettingsCommand cmd) {
+        settingsService.saveSettings(cmd)
+        redirect(controller: 'settings', action: 'index')
     }
 }

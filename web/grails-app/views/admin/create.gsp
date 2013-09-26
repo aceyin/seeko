@@ -1,3 +1,4 @@
+<%@ page import="org.seeko.Admin" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>

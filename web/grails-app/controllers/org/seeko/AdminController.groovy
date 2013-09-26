@@ -10,15 +10,6 @@ class AdminController {
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
     UserService userService
 
-    def index() {
-        if (isLoggedIn()) {
-            //TODO: Ace
-            render("Login sucess")
-        } else {
-            redirect([action: "login"])
-        }
-    }
-
     /**
      * Login to system
      */
