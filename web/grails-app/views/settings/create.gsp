@@ -100,7 +100,7 @@
         </g:form>
     </div><!-- general settings -->
 <!-- nav-pills -->
-<g:render template="nav-pills"/>
+<g:render template="/layouts/nav-pills" model="['active_menu': 'settings']"/>
 </div>
 </body>
 </html>
