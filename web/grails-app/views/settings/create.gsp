@@ -9,7 +9,7 @@
 <body>
 <div class="row">
     <!-- general settings -->
-    <div class="col-lg-8">
+    <div class="col-lg-9">
         <g:form action="save" method="POST">
             <div class="row">
                 <!-- http port -->

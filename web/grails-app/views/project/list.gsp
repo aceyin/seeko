@@ -10,7 +10,7 @@
 
 <div class="row">
     <!-- project lists -->
-    <div class="col-lg-8">
+    <div class="col-lg-9">
         <div class="row">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -25,14 +25,9 @@
                         </div>
 
                         <div class="col-lg-2 pull-right">
-                            <button class="btn btn-success" name="AddProject" id="AddProject">Add Project</button>
-
-                            <div class="hidden" id="createProjectForm"
-                                 title="<g:message code="seeko.lables.create.project"/>">
-                                <div class="row">
-                                    asdf
-                                </div>
-                            </div>
+                            <a data-toggle="modal"
+                               href="<g:createLink controller="project" action="create"/>"
+                               data-target="#addProjectForm"><g:message code="seeko.lables.create.project"/></a>
                         </div>
                     </div>
                     <!-- description -->
@@ -47,10 +42,8 @@
     <!-- nav-pills -->
     <g:render template="/layouts/nav-pills" model="['active_menu': 'projects']"/>
 </div>
-<script type="application/javascript">
-    $(document).ready(function () {
-        ProjectController.init();
-    })
-</script>
+
+<g:render template="/layouts/modal"
+          model="['modal_id': 'addProjectForm', 'modal_title': 'aaa']"/>
 </body>
 </html>

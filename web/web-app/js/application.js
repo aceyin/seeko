@@ -7,9 +7,4 @@ var RepositoryController = {
 }
 
 var ProjectController = {
-    init: function () {
-        $("#AddProject").button().click(function () {
-            $("#dialog-form").dialog("open");
-        });
-    }
 }

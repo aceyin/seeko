@@ -1,6 +1,7 @@
 /* main css based on bootstrap*/
 body {
     background: transparent url("../images/slogan.png") no-repeat fixed center;
+    /* open this if use navbar-fixed-top */
     padding-top: 100px;
 }
 
@@ -23,3 +24,4 @@ body {
 .nav-q-input {
     width: 400px;
 }
+
