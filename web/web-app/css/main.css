@@ -25,3 +25,11 @@ body {
     width: 400px;
 }
 
+.modal-backdrop {
+    background: rgba(239, 239, 239, .7);
+}
+
+body.modal-open {
+    overflow-y: hidden;
+}
+

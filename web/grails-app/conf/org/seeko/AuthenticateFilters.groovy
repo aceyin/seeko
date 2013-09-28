@@ -3,10 +3,10 @@ package org.seeko
 class AuthenticateFilters {
 
     def filters = {
-        loginCheck(controller: 'settings') {
+        loginCheck(controller: 'settings|project', action: '*') {
             before = {
                 if (!session[Constants.ADMIN_SESSION_KEY]) {
-                    redirect(controller: 'admin', action: 'login')
+                    redirect(controller: 'admin', action: 'index')
                     return false
                 }
             }

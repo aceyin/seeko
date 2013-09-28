@@ -14,7 +14,7 @@
         <g:if test="${flash.message}">
             <span class="label label-warning">${flash.message}</span>
         </g:if>
-        <g:form action="login" role="form">
+        <g:form action="login" role="form" method="POST">
             <fieldset class="form">
                 <g:render template="login"/>
             </fieldset>

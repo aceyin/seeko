@@ -9,4 +9,6 @@
 <script src="${resource(dir: 'js', file: 'jquery-1.9.1.js')}" type="text/javascript"></script>
 <script src="${resource(dir: 'js', file: 'bootstrap.js')}" type="text/javascript"></script>
 <script src="${resource(dir: 'js', file: 'modal.js')}" type="text/javascript"></script>
+<script src="${resource(dir: 'js', file: 'tooltip.js')}" type="text/javascript"></script>
+<script src="${resource(dir: 'js', file: 'popover.js')}" type="text/javascript"></script>
 <script src="${resource(dir: 'js', file: 'application.js')}" type="text/javascript"></script>

@@ -26,7 +26,7 @@
 
                         <div class="col-lg-2 pull-right">
                             <a data-toggle="modal"
-                               href="<g:createLink controller="project" action="create"/>"
+                               href="${createLink(controller: 'project', action: 'create')}" data-backdrop="true"
                                data-target="#addProjectForm"><g:message code="seeko.lables.create.project"/></a>
                         </div>
                     </div>
@@ -41,9 +41,9 @@
     </div>
     <!-- nav-pills -->
     <g:render template="/layouts/nav-pills" model="['active_menu': 'projects']"/>
+    <g:render template="/layouts/modal"
+              model="['modal_id': 'addProjectForm', 'modal_title': 'aaa']"/>
 </div>
 
-<g:render template="/layouts/modal"
-          model="['modal_id': 'addProjectForm', 'modal_title': 'aaa']"/>
 </body>
 </html>
