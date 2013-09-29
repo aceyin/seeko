@@ -10,7 +10,7 @@
 
 <div class="row">
     <!-- project lists -->
-    <div class="col-lg-9">
+    <div class="col-lg-8">
         <div class="row">
             <div class="panel panel-default">
                 <div class="panel-heading">

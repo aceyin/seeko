@@ -1,4 +1,4 @@
-<div class="col-lg-3">
+<div class="col-lg-4">
     <ul class="nav nav-pills nav-stacked">
         <li <g:if test="${active_menu == 'settings'}">class="active"</g:if>>
             <a href="${createLink(controller: 'settings')}">

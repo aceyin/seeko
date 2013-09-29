@@ -4,6 +4,11 @@
 <head>
     <meta name="layout" content="main">
     <title><g:message code="seeko.labels.admin.login"/></title>
+    <script>
+        if (window.location != window.top.location) {
+            window.top.location = window.location;
+        }
+    </script>
 </head>
 
 <body>

@@ -1,11 +1,14 @@
 <div class="col-lg-6 col-lg-offset-3">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">Panel title</h3>
+            <h3 class="panel-title"><g:message code="seeko.lables.create.project"/></h3>
         </div>
 
         <div class="panel-body">
-            Panel content
+            <g:form action="save" method="POST" name="projectCreationForm">
+                <g:render template="form"/>
+                <button name="saveProject" id="saveProject" class="btn btn-success">Save</button>
+            </g:form>
         </div>
     </div>
 </div>
