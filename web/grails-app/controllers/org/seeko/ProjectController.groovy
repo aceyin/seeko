@@ -1,6 +1,5 @@
 package org.seeko
 
-import grails.converters.JSON
 import org.springframework.dao.DataIntegrityViolationException
 
 class ProjectController {
@@ -25,10 +24,10 @@ class ProjectController {
         if (!projectInstance.save(flush: true)) {
             render projectInstance.errors.allErrors.collect {
                 message(error: it, encodeAs: 'HTML')
-            } as JSON
+            }
             return
         }
-        render message(code: 'seeko.messages.create.project.success') as JSON
+        render message(code: 'seeko.messages.create.project.success')
     }
 
     def show(Long id) {
