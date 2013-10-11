@@ -5,10 +5,11 @@
 <link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap.css')}" type="text/css" media="screen">
 <link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap-theme.css')}" type="text/css">
 <link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css" media="screen">
+<link rel="stylesheet" href="${resource(dir: 'css', file: 'magnific-popup.css')}" type="text/css" media="screen">
 
 <script src="${resource(dir: 'js', file: 'jquery-1.9.1.js')}" type="text/javascript"></script>
 <script src="${resource(dir: 'js', file: 'bootstrap.js')}" type="text/javascript"></script>
-<script src="${resource(dir: 'js', file: 'modal.js')}" type="text/javascript"></script>
 <script src="${resource(dir: 'js', file: 'tooltip.js')}" type="text/javascript"></script>
 <script src="${resource(dir: 'js', file: 'popover.js')}" type="text/javascript"></script>
+<script src="${resource(dir: 'js', file: 'jquery.magnific-popup.min.js')}" type="text/javascript"></script>
 <script src="${resource(dir: 'js', file: 'application.js')}" type="text/javascript"></script>

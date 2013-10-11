@@ -8,9 +8,9 @@ var RepositoryController = {
 
 var ProjectController = {
     init: function () {
-        $("#saveProject").click(function () {
-            ProjectController.save();
-        });
+        $('#create-project-link').magnificPopup({
+            type: 'ajax'
+        })
     },
     save: function () {
         var resultElmt = $("#projectCreationResult");

@@ -12,10 +12,11 @@
     <div class="col-lg-8">
         <!-- title -->
         <div class="row">
-            <h3><g:message code="seeko.lables.settings.projects"/></h3>
-            <a data-toggle="modal" class="pull-right"
-               href="${createLink(controller: 'project', action: 'create')}" data-backdrop="true"
-               data-target="#addProjectForm"><g:message code="seeko.lables.create.project"/></a>
+            <h3><g:message code="seeko.lables.settings.projects"/>
+                <a class="btn btn-default btn-sm" id="create-project-link"
+                   href="${createLink(controller: 'project', action: 'create')}"><g:message
+                        code="seeko.lables.create.project"/></a>
+            </h3>
             <span class="help-block"><g:message code="seeko.lables.settings.project.desc"/></span>
         </div>
         <!-- end title -->
@@ -46,9 +47,11 @@
     </div>
     <!-- nav-pills -->
     <g:render template="/layouts/settings-navi-pills" model="['active_menu': 'projects']"/>
-    <g:render template="/layouts/modal"
-              model="['modal_id': 'addProjectForm', 'modal_title': 'aaa']"/>
 </div>
-
+<script type="application/javascript">
+    $(document).ready(function () {
+        ProjectController.init();
+    })
+</script>
 </body>
 </html>
