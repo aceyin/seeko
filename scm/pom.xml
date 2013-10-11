@@ -9,7 +9,6 @@
         <groupId>org.seeko</groupId>
         <artifactId>seeko</artifactId>
         <version>1.0.0-SNAPSHOT</version>
-        <relativePath>/</relativePath>
     </parent>
 
     <name>scm</name>
@@ -27,11 +26,6 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.seeko</groupId>
-            <artifactId>indexer</artifactId>
-            <version>${project.version}</version>
-        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
