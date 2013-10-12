@@ -14,7 +14,7 @@
     <packaging>grails-app</packaging>
 
     <name>web</name>
-    <description>0.1</description>
+    <description>The main web interface for user and administrator</description>
 
     <properties>
         <grails.version>2.2.4</grails.version>
@@ -102,6 +102,7 @@
     </dependencies>
 
     <build>
+        <finalName>web</finalName>
         <pluginManagement/>
 
         <plugins>

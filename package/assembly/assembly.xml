@@ -11,38 +11,29 @@
     <!-- Need the base directory in the ZIP file -->
     <includeBaseDirectory>true</includeBaseDirectory>
 
-    <!-- Assembly the contents in bin folder -->
-    <fileSets>
-        <fileSet>
-            <directory>bin</directory>
-            <outputDirectory>bin</outputDirectory>
-            <includes>
-                <include>*.*</include>
-                <include>**/*.*</include>
-            </includes>
-            <directoryMode>0755</directoryMode>
-        </fileSet>
-    </fileSets>
-    <!-- END: Assembly the contents in bin folder -->
-
-    <moduleSets>
-        <moduleSet>
-            <includes>
-                <include>org.seeko:web</include>
-            </includes>
-            <includeSubModules>true</includeSubModules>
-            <binaries>
-                <outputFileNameMapping>
-                    ${module.artifactId}.${module.extension}
-                </outputFileNameMapping>
-                <outputDirectory>/lib</outputDirectory>
-                <unpack>false</unpack>
-                <includeDependencies>true</includeDependencies>
-            </binaries>
-        </moduleSet>
-    </moduleSets>
+    <!-- assembly web module -->
+    <files>
+        <file>
+            <outputDirectory>lib</outputDirectory>
+            <fileMode>0755</fileMode>
+            <source>../web/target/web.war</source>
+            <destName>web.war</destName>
+        </file>
+    </files>
 
     <dependencySets>
+        <!-- Assembly seeko modules -->
+        <dependencySet>
+            <scope>runtime</scope>
+            <useTransitiveDependencies>false</useTransitiveDependencies>
+            <outputDirectory>lib</outputDirectory>
+            <outputFileNameMapping>${artifact.artifactId}.${artifact.extension}</outputFileNameMapping>
+            <includes>
+                <include>org.seeko:*:*</include>
+            </includes>
+            <unpack>false</unpack>
+        </dependencySet>
+        <!-- End assembly seeko modules -->
         <!-- Assembly winstone -->
         <dependencySet>
             <scope>runtime</scope>
