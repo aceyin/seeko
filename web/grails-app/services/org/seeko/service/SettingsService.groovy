@@ -39,15 +39,34 @@ class SettingsService {
      * @return
      */
     def SettingsCommand loadSettings() {
-        SettingsCommand cmd = new SettingsCommand()
-        Properties p = new Properties()
-        p.load(new FileInputStream(grailsApplication.config.seeko.conf.exposed))
-        if (p.size() == 0) {
+        File conf = new File(grailsApplication.config.seeko.conf.exposed)
+        if (!conf.exists()) {
+            conf.createNewFile()
             return loadDefaultSettings()
         } else {
-            BeanUtils.populate(cmd, p)
-            return cmd
+            FileInputStream fis = new FileInputStream(conf)
+            Properties p = new Properties()
+            p.load(fis)
+            if (p.size() == 0) {
+                return loadDefaultSettings()
+            } else {
+                SettingsCommand cmd = new SettingsCommand()
+                BeanUtils.populate(cmd, p)
+                return cmd
+            }
         }
+    }
+
+    /**
+     * Load the internal API settings
+     * @return
+     */
+    def Map<String, String> loadApis() {
+        Map<String, String> apis = grailsApplication.config.seeko.general.settings.api
+        if (!apis) {
+            throw new RuntimeException("Can not load API settings.")
+        }
+        return apis
     }
 
     /**
@@ -58,6 +77,11 @@ class SettingsService {
         removeGrailsAutoAddedProperties(map)
         Properties p = new Properties()
         p.putAll(map)
+
+        Map<String, String> apis = loadApis()
+        p.putAll(apis)
+
+        // save to file
         p.store(new FileOutputStream(grailsApplication.config.seeko.conf.exposed), "Updated at " + new Date())
     }
 

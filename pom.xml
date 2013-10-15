@@ -17,6 +17,7 @@
         <module>cli</module>
         <module>scm</module>
         <module>package</module>
+        <module>common</module>
     </modules>
 
     <!-- properties definition -->
