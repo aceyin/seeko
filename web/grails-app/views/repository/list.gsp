@@ -24,11 +24,35 @@
 				<thead>
 					<tr>
 					
+						<g:sortableColumn property="name" title="${message(code: 'repository.name.label', default: 'Name')}" />
+					
+						<g:sortableColumn property="type" title="${message(code: 'repository.type.label', default: 'Type')}" />
+					
+						<g:sortableColumn property="url" title="${message(code: 'repository.url.label', default: 'Url')}" />
+					
+						<g:sortableColumn property="excludes" title="${message(code: 'repository.excludes.label', default: 'Excludes')}" />
+					
+						<g:sortableColumn property="password" title="${message(code: 'repository.password.label', default: 'Password')}" />
+					
+						<th><g:message code="repository.project.label" default="Project" /></th>
+					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${repositoryInstanceList}" status="i" var="repositoryInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+					
+						<td><g:link action="show" id="${repositoryInstance.id}">${fieldValue(bean: repositoryInstance, field: "name")}</g:link></td>
+					
+						<td>${fieldValue(bean: repositoryInstance, field: "type")}</td>
+					
+						<td>${fieldValue(bean: repositoryInstance, field: "url")}</td>
+					
+						<td>${fieldValue(bean: repositoryInstance, field: "excludes")}</td>
+					
+						<td>${fieldValue(bean: repositoryInstance, field: "password")}</td>
+					
+						<td>${fieldValue(bean: repositoryInstance, field: "project")}</td>
 					
 					</tr>
 				</g:each>

@@ -10,7 +10,15 @@ var ProjectController = {
     init: function () {
         $('#create-project-link').magnificPopup({
             type: 'ajax'
-        })
+        });
+
+        $('#save-project-link').click(function () {
+            ProjectController.save();
+        });
+
+        $('.add-repository-link').magnificPopup({
+            type: 'ajax'
+        });
     },
     save: function () {
         var resultElmt = $("#projectCreationResult");

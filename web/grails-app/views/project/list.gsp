@@ -29,14 +29,24 @@
                             <h4 class="panel-title">
                                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
                                    href="#collapseOne">
-                                    ${proj.name} - ${proj.description}
+                                    ${proj.name}
+                                </a>
+                                <a class="pull-right add-repository-link" id="add-repository-link-${proj.id}"
+                                   href="<g:createLink controller="repository" action="create"
+                                                       params='[pid: "${proj.id}"]'/>">
+                                    <g:message code="seeko.lables.add.repository"/>
                                 </a>
                             </h4>
+
                         </div>
 
                         <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
-                                repositories
+                                <div class="row">${proj.description}</div>
+
+                                <div class="row">
+                                    <g:message code="seeko.lables.repositories"/>
+                                </div>
                             </div>
                         </div>
                     </div>

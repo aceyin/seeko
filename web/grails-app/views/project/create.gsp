@@ -7,7 +7,6 @@
         <div class="panel-body">
             <g:form action="save" method="POST" name="projectCreationForm">
                 <g:render template="form"/>
-                <button name="saveProject" id="saveProject" class="btn btn-success">Save</button>
             </g:form>
         </div>
     </div>

@@ -16,7 +16,13 @@ class RepositoryController {
     }
 
     def create() {
-        [repositoryInstance: new Repository(params)]
+        Project proj = Project.findById(params.pid)
+        if (!proj) {
+            throw new IllegalArgumentException('No project with ID "' + params.pid + '" found')
+        }
+        def repositoryInstance = new Repository(params)
+        repositoryInstance.project = proj
+        return [repositoryInstance: repositoryInstance]
     }
 
     def save() {
@@ -63,8 +69,8 @@ class RepositoryController {
         if (version != null) {
             if (repositoryInstance.version > version) {
                 repositoryInstance.errors.rejectValue("version", "default.optimistic.locking.failure",
-                          [message(code: 'repository.label', default: 'Repository')] as Object[],
-                          "Another user has updated this Repository while you were editing")
+                        [message(code: 'repository.label', default: 'Repository')] as Object[],
+                        "Another user has updated this Repository while you were editing")
                 render(view: "edit", model: [repositoryInstance: repositoryInstance])
                 return
             }
