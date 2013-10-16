@@ -5,4 +5,8 @@ package org.seeko
  */
 public interface Constants {
     String ADMIN_SESSION_KEY = "ADMIN_SESSION"
+
+    enum RepositoryType {
+        SVN, GIT, CVS
+    }
 }

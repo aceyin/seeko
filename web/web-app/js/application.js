@@ -1,33 +1,49 @@
 // main javascript based on bootstrap and jquery
-var RepositoryController = {
-    // create repository
-    create: function () {
-
-    }
-}
-
 var ProjectController = {
     init: function () {
         $('#create-project-link').magnificPopup({
             type: 'ajax'
         });
 
-        $('#save-project-link').click(function () {
-            ProjectController.save();
-        });
-
         $('.add-repository-link').magnificPopup({
             type: 'ajax'
         });
+
+        $('.edit-repository-link').magnificPopup({
+            type: 'ajax'
+        });
     },
-    save: function () {
+    /** saveProject project **/
+    saveProject: function () {
         var resultElmt = $("#projectCreationResult");
         $.post("/project/save", $("#projectCreationForm").serialize())
             .success(function (data) {
-                resultElmt.innerHTML = data;
+                resultElmt.html(data);
             })
             .error(function (data) {
-                resultElmt.innerHTML = "Something error";
+                resultElmt.html(data);
+            });
+    },
+    /** save a repository **/
+    saveRepository: function () {
+        var resultElmt = $("#addRepositoryResult");
+        $.post("/repository/save", $("#addRepositoryForm").serialize())
+            .success(function (data) {
+                resultElmt.html(data);
+            })
+            .error(function (data) {
+                resultElmt.html(data);
+            });
+    },
+    /** edit repository **/
+    updateRepository: function () {
+        var resultElmt = $("#updateRepositoryResult");
+        $.post("/repository/update", $("#updateRepositoryForm").serialize())
+            .success(function (data) {
+                resultElmt.html(data);
+            })
+            .error(function (data) {
+                resultElmt.html(data);
             });
     }
 }

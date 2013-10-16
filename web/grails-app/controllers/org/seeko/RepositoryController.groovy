@@ -2,6 +2,9 @@ package org.seeko
 
 import org.springframework.dao.DataIntegrityViolationException
 
+/**
+ * TODO: Ace, move the operations into service class
+ */
 class RepositoryController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
@@ -16,24 +19,36 @@ class RepositoryController {
     }
 
     def create() {
-        Project proj = Project.findById(params.pid)
-        if (!proj) {
-            throw new IllegalArgumentException('No project with ID "' + params.pid + '" found')
+        Project project = Project.get(params.pid)
+        if (!project) {
+            render message(code: 'seeko.message.no.project.with.id.found', params.pid)
+            return
         }
         def repositoryInstance = new Repository(params)
-        repositoryInstance.project = proj
+        repositoryInstance.project = project
         return [repositoryInstance: repositoryInstance]
     }
 
     def save() {
         def repositoryInstance = new Repository(params)
-        if (!repositoryInstance.save(flush: true)) {
-            render(view: "create", model: [repositoryInstance: repositoryInstance])
+        def pid = params.pid
+
+        Project project = Project.get(pid)
+
+        if (!project) {
+            render message(code: 'seeko.message.no.project.with.id.found', pid)
             return
         }
 
-        flash.message = message(code: 'default.created.message', args: [message(code: 'repository.label', default: 'Repository'), repositoryInstance.id])
-        redirect(action: "show", id: repositoryInstance.id)
+        repositoryInstance.project = project
+
+        if (!repositoryInstance.save(flush: true)) {
+            render repositoryInstance.errors.allErrors.collect {
+                message(error: it, encodeAs: 'HTML')
+            }
+            return
+        }
+        render message(code: 'seeko.message.save.data.success')
     }
 
     def show(Long id) {
@@ -61,8 +76,7 @@ class RepositoryController {
     def update(Long id, Long version) {
         def repositoryInstance = Repository.get(id)
         if (!repositoryInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'repository.label', default: 'Repository'), id])
-            redirect(action: "list")
+            render message(code: 'seeko.message.no.repository.with.id.found', id)
             return
         }
 
@@ -71,7 +85,11 @@ class RepositoryController {
                 repositoryInstance.errors.rejectValue("version", "default.optimistic.locking.failure",
                         [message(code: 'repository.label', default: 'Repository')] as Object[],
                         "Another user has updated this Repository while you were editing")
-                render(view: "edit", model: [repositoryInstance: repositoryInstance])
+
+                render repositoryInstance.errors.allErrors.collect {
+                    message(error: it, encodeAs: 'HTML')
+                }
+
                 return
             }
         }
@@ -79,12 +97,12 @@ class RepositoryController {
         repositoryInstance.properties = params
 
         if (!repositoryInstance.save(flush: true)) {
-            render(view: "edit", model: [repositoryInstance: repositoryInstance])
+            render repositoryInstance.errors.allErrors.collect {
+                message(error: it, encodeAs: 'HTML')
+            }
             return
         }
-
-        flash.message = message(code: 'default.updated.message', args: [message(code: 'repository.label', default: 'Repository'), repositoryInstance.id])
-        redirect(action: "show", id: repositoryInstance.id)
+        render message(code: 'seeko.message.save.data.success')
     }
 
     def delete(Long id) {

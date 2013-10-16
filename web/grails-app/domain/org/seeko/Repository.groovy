@@ -12,7 +12,9 @@ class Repository {
 
     static constraints = {
         name(blank: false)
-        type(blank: false)
+        type(blank: false, inList: ['SVN', 'GIT', 'CVS'])
         url(blank: false, unique: true)
+        user(blank: false)
+        password(blank: false)
     }
 }

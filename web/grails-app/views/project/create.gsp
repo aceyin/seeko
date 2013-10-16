@@ -5,7 +5,7 @@
         </div>
 
         <div class="panel-body">
-            <g:form action="save" method="POST" name="projectCreationForm">
+            <g:form action="save" method="POST" name="projectCreationForm" role="form">
                 <g:render template="form"/>
             </g:form>
         </div>
