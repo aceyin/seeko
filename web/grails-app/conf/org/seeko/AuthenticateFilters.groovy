@@ -1,5 +1,8 @@
 package org.seeko
 
+/**
+ * The filter for authenticate.
+ */
 class AuthenticateFilters {
 
     def filters = {
