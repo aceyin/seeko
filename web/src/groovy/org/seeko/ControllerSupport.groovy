@@ -1,7 +1,10 @@
 package org.seeko
 
 /**
- * Created by aceyin on 13-9-24.
+ *
+ * The common functions for all controller classes.
+ * Will be Mixin by the controllers.
+ *
  */
 class ControllerSupport {
 
