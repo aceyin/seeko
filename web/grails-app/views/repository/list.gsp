@@ -30,7 +30,7 @@
 					
 						<g:sortableColumn property="url" title="${message(code: 'repository.url.label', default: 'Url')}" />
 					
-						<g:sortableColumn property="excludes" title="${message(code: 'repository.excludes.label', default: 'Excludes')}" />
+						<g:sortableColumn property="excludes" title="${message(code: 'repository.exclusions.label', default: 'Excludes')}" />
 					
 						<g:sortableColumn property="password" title="${message(code: 'repository.password.label', default: 'Password')}" />
 					
@@ -48,7 +48,7 @@
 					
 						<td>${fieldValue(bean: repositoryInstance, field: "url")}</td>
 					
-						<td>${fieldValue(bean: repositoryInstance, field: "excludes")}</td>
+						<td>${fieldValue(bean: repositoryInstance, field: "exclusions")}</td>
 					
 						<td>${fieldValue(bean: repositoryInstance, field: "password")}</td>
 					
