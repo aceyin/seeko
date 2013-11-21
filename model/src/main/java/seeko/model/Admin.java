@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * Created by aceyin on 13-11-20.
  */
-public class Admin implements Serializable {
+public class Admin extends BaseModel implements Serializable {
     @NotNull(message = "The username can not be null")
     @Max(value = 32, message = "The username can not exceeds 32 characters")
     private String username;

@@ -7,7 +7,7 @@ import java.util.Set;
 /**
  * Created by aceyin on 13-11-21.
  */
-public class Project implements Serializable {
+public class Project extends BaseModel implements Serializable {
     @NotNull(message = "The project name can not be null")
     private String name;
 
@@ -15,7 +15,7 @@ public class Project implements Serializable {
 
     private Long lastSync;
 
-    Set<Repository> repositories;
+    private Set<Repository> repositories;
 
     public String getName() {
         return name;

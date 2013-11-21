@@ -8,26 +8,20 @@ import java.io.Serializable;
 /**
  * Created by aceyin on 13-11-21.
  */
-public class Repository implements Serializable {
-    /* the name of the repository */
+public class Repository extends BaseModel implements Serializable {
     @NotNull(message = "The name of a repository can not be null")
     private String name;
-    /* the type of this repository */
     @NotNull(message = "The type of a repository can not be null")
     private ScmType type;
-    /* the username of this repository */
     private String username;
-    /* the password of this repository */
     private String password;
-    /* the URL of this repository */
     @NotNull(message = "The URL of a repository can not be null")
     private String url;
-    /* the exclusions of this repository */
     private String exclusions;
-    /* the latest revision of this repository */
     private String latestRevision;
-    /* the latest update time */
     private Long lastUpdate;
+    @NotNull(message = "Project id can not be null")
+    private Integer projectId;
 
     public String getName() {
         return name;
@@ -91,6 +85,14 @@ public class Repository implements Serializable {
 
     public void setLastUpdate(Long lastUpdate) {
         this.lastUpdate = lastUpdate;
+    }
+
+    public Integer getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(Integer projectId) {
+        this.projectId = projectId;
     }
 
     @Override
