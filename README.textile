@@ -1,0 +1,60 @@
+h1. "Seeko":http://seeko.org - A Powerful Code Search Engine
+
+h2. About Seeko
+
+Seeko is a open source and powerful code search engine . By using seeko developers
+can find any codes in their project quickly without checkout or clone the projects
+into their local disk.
+
+h2. Main Features
+
+TBD
+
+h2. Project Structure
+
+Seeko is written in Java and use maven as the project management tool. The project includes 6 maven modules:
+
+* common
+** this module includes the classes which are referenced by other modules. For example the util classes, helper classes etc.
+
+* esengine
+** seeko use "elasticsearch":https://github.com/elasticsearch as the backend text search engine, this module includes the classes for encapsulating the operations to elasticsearch.
+
+* indexer
+** this module includes the classes for checkout/clone, update source codes from remote repositories and submit the source codes to elasticsearch.
+
+* model
+** TBD
+
+* package
+** this module is for package the seeko project into zip package.
+
+* web
+** this module provides the core web interface to end user for searching and exploring the searched result.
+
+Except the 6 maven modules listed above, there is another "bin" folder, which is used to put the shell script and some configuration files.
+
+h2. How Seeko Works
+
+The core feature in seeko is: search any text in source codes without checkout the project into local disk.
+Before the codes can be searched, the administrator should configure seeko to let it connect to some source code repository.
+After the remote source code repositories are configured, seeko will read the source codes and submit them into the elasticsearch.
+The elasticsearch will build the source codes into indexes after that all the codes can be searched from seeko web interface.
+
+h2. Runtime Structure
+
+When startup seeko by run @./seeko.sh@, 3 JVM instances will be started:
+
+* JVM instance-1 is the web module
+* JVM instance-2 is the indexer module
+* JVM instance-3 is the esengine module
+
+The reason why we use 3 separated JVM instances is:
+* the indexer module is responsible for file handle, it will consume many resource, for example the memory
+* the esengine module is responsible for build indexes and provide the backend search functionality, it also need consume big memory
+* the web module is responsible for the interactive with user and the backend module, it consumes less memory and should keep as stable as possible.
+based on the reason above, we separated the 3 modules into different JVM.
+
+h2. License
+
+TBD
