@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<projects>
+    <project name="msdp">
+        <repositories>
+            <repository name="all" type="SVN">
+                <credential name="eniayin" password="qwer1234"/>
+                <url>http://svn.msdp.ao.ericsson.se/dev/msdp</url>
+            </repository>
+        </repositories>
+    </project>
+</projects>
