@@ -1,21 +1,23 @@
 package seeko.common.bean;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
 
 /**
  * Created by aceyin on 13-11-30.
  */
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Credential {
+    @XmlAttribute
     private String name;
+    @XmlAttribute
     private String password;
-    private String url;
 
     public String getName() {
         return name;
     }
 
-    @XmlAttribute
     public void setName(String name) {
         this.name = name;
     }
@@ -24,17 +26,7 @@ public class Credential {
         return password;
     }
 
-    @XmlAttribute
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    @XmlElement
-    public void setUrl(String url) {
-        this.url = url;
     }
 }

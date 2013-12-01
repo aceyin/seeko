@@ -25,7 +25,7 @@ public class Projects {
     /**
      * Load projects from XML file .
      */
-    public static Projects load(String fileName) {
+    public static List<Project> load(String fileName) {
         try {
             JAXBContext context = JAXBContext.newInstance(Projects.class);
             Unmarshaller unmarshaller = context.createUnmarshaller();
@@ -34,7 +34,7 @@ public class Projects {
                 LOGGER.warn("No projects found in file :" + fileName);
                 return null;
             }
-            return projects;
+            return projects.projects;
 
         } catch (JAXBException e) {
             throw new RuntimeException("Error while parse the projects.xml file", e);

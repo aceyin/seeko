@@ -1,21 +1,23 @@
 package seeko.common.bean;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.*;
 import java.util.List;
 
 /**
  * Created by aceyin on 13-11-30.
  */
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Project {
+    @XmlAttribute
     private String name;
+    @XmlElementWrapper(name = "repositories")
+    @XmlElement(name = "repository")
     private List<Repository> repositories;
 
     public String getName() {
         return name;
     }
 
-    @XmlAttribute
     public void setName(String name) {
         this.name = name;
     }
@@ -24,7 +26,6 @@ public class Project {
         return repositories;
     }
 
-    @XmlElement
     public void setRepositories(List<Repository> repositories) {
         this.repositories = repositories;
     }

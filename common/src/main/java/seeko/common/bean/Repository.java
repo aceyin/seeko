@@ -1,27 +1,31 @@
 package seeko.common.bean;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.*;
 
 /**
  * Created by aceyin on 13-11-30.
  */
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Repository {
     /**
      * The repository type.
      */
+    @XmlTransient
     public static enum Type {
         SNV, GIT, CVS;
     }
 
+    @XmlAttribute
     private String type;
+    @XmlElement
     private Credential credential;
+    @XmlElement
+    private String url;
 
     public String getType() {
         return type;
     }
 
-    @XmlAttribute
     public void setType(String type) {
         this.type = type;
     }
@@ -30,8 +34,15 @@ public class Repository {
         return credential;
     }
 
-    @XmlElement
     public void setCredential(Credential credential) {
         this.credential = credential;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

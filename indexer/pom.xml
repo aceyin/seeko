@@ -12,6 +12,22 @@
     <artifactId>indexer</artifactId>
     <packaging>jar</packaging>
 
+    <dependencies>
+        <dependency>
+            <groupId>seeko</groupId>
+            <artifactId>common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz-jobs</artifactId>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -20,7 +36,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>seeko.indexer.run.Main</mainClass>
+                            <mainClass>seeko.indexer.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

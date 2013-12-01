@@ -1,4 +1,4 @@
-package seeko.indexer.run;
+package seeko.indexer;
 
 /**
  * Created by aceyin on 13-11-30.
