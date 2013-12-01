@@ -1,10 +1,8 @@
-h1. "Seeko":http://seeko.org - A Powerful Code Search Engine
+h2. "Seeko":http://seeko.org - A Powerful Code Search Engine
 
 h2. About Seeko
 
-Seeko is a open source and powerful code search engine . By using seeko developers
-can find any codes in their project quickly without checkout or clone the projects
-into their local disk.
+Seeko is a open source and powerful code search engine . By using seeko developers can find any codes in their project quickly without checkout or clone the projects into their local disk.
 
 h2. Main Features
 
