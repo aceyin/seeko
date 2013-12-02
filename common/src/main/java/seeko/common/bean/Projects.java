@@ -22,16 +22,13 @@ public class Projects {
     @XmlElement(name = "project")
     private List<Project> projects;
 
-    /**
-     * Load projects from XML file .
-     */
-    public static List<Project> load(String fileName) {
+    public static List<Project> load(File file) {
         try {
             JAXBContext context = JAXBContext.newInstance(Projects.class);
             Unmarshaller unmarshaller = context.createUnmarshaller();
-            Projects projects = (Projects) unmarshaller.unmarshal(new File(fileName));
+            Projects projects = (Projects) unmarshaller.unmarshal(file);
             if (projects == null) {
-                LOGGER.warn("No projects found in file :" + fileName);
+                LOGGER.warn("No projects found in file :" + file.getAbsolutePath());
                 return null;
             }
             return projects.projects;
@@ -39,6 +36,13 @@ public class Projects {
         } catch (JAXBException e) {
             throw new RuntimeException("Error while parse the projects.xml file", e);
         }
+    }
+
+    /**
+     * Load projects from XML file .
+     */
+    public static List<Project> load(String fileName) {
+        return load(new File(fileName));
     }
 
     public void setProjects(List<Project> projects) {

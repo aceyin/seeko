@@ -1,5 +1,7 @@
 package seeko.indexer;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import seeko.indexer.scheduler.impl.RepositoryCheckoutScheduler;
 import seeko.indexer.scheduler.impl.RepositoryUpdateScheduler;
 
@@ -12,7 +14,10 @@ import seeko.indexer.scheduler.impl.RepositoryUpdateScheduler;
  * 3. add shutdown hook to stop the schedulers
  */
 public class Main {
+    private ApplicationContext context = new ClassPathXmlApplicationContext("classpath:indexer-context.xml");
+
     public static void main(String... args) {
+
         final RepositoryCheckoutScheduler checkoutScheduler = new RepositoryCheckoutScheduler();
         checkoutScheduler.start(null);
 

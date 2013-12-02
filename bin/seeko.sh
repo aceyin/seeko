@@ -36,10 +36,7 @@ if [[ 'x'${SEEKO_HOME} == 'x' ]]; then
     SEEKO_HOME="`dirname $0`";
 fi
 
-# import the variables in conf
-source "${SEEKO_HOME}/seeko.conf"
-
-# Check the SEEKO_DATA
+# Check the SEEKO_DATA_DIR
 USER_HOME="${HOME}";
 if [[ 'x'${USER_HOME} == 'x' ]]; then
     USER_HOME="eval echo ~${USER}";
@@ -47,7 +44,7 @@ if [[ 'x'${USER_HOME} == 'x' ]]; then
         USER_HOME="`ls -d ~`";
     fi
 fi
-SEEKO_DATA="${USER_HOME}/.seeko";
+SEEKO_DATA_DIR="${USER_HOME}/.seeko";
 
 # Main CLI Jar
 CLI="${SEEKO_HOME}/lib/cli.jar";
@@ -56,6 +53,6 @@ CLI="${SEEKO_HOME}/lib/cli.jar";
 CLASSPATH=".:${CLASSPATH}:${SEEKO_HOME}/lib/cli.jar";
 
 # JAVA_OPT
-JAVA_OPT="-D SEEKO_HOME=${SEEKO_HOME} -D SEEKO_DATA=${SEEKO_DATA}"
+JAVA_OPT="-Dseeko.home=${SEEKO_HOME} -Dseeko.data.dir=${SEEKO_DATA_DIR}"
 
 `${JAVA} -jar ${CLI} -cp ${CLASSPATH} ${JAVA_OPT}`
