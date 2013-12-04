@@ -45,7 +45,4 @@ public class Projects {
         return load(new File(fileName));
     }
 
-    public void setProjects(List<Project> projects) {
-        this.projects = projects;
-    }
 }
